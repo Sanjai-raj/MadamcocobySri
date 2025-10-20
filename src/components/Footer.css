@@ -1,0 +1,62 @@
+/* Footer.css */
+.footer {
+  background-color: var(--primary-color); /* Dark brown background */
+  color: var(--text-light); /* Light text color */
+  padding: 40px 5%;
+  text-align: center;
+  font-size: 0.95em;
+  /* border-top: 5px solid var(--accent-color); A subtle accent line */
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer p {
+  margin: 5px 0;
+  line-height: 1.5;
+  color: var(--text-light); /* Ensure paragraphs also use light text */
+}
+
+.footer a {
+  color: var(--text-light);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: var(--accent-color); /* Highlight links on hover */
+  text-decoration: underline;
+}
+
+/* Optional: Styles for quick links if you uncomment them in Footer.js */
+/*
+.footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer ul li a {
+  font-weight: 600;
+}
+*/
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .footer {
+    padding: 30px 3%;
+    font-size: 0.85em;
+  }
+  /* If quick links are active, adjust them for mobile */
+  /*
+  .footer ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+  */
+}

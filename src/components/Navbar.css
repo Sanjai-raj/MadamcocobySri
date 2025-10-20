@@ -1,0 +1,92 @@
+/* components/Navbar.css */
+.navbar {
+  background-color: var(--white);
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow-light);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  /* background-color: rgba(42, 1, 1, 0.618); */
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand .logo {
+  height: 40px; /* Adjust as needed */
+  margin-right: 10px;
+}
+
+.navbar-brand a {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.navbar-brand a:hover {
+  color: var(--secondary-color);
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+}
+
+.navbar-links li {
+  margin-left: 30px;
+}
+
+.navbar-links a {
+  font-size: 1.1rem;
+  color: var(--light-text-color);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: var(--primary-color);
+}
+
+.hamburger {
+  display: none; /* Hidden on desktop */
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none; /* Hide links by default on small screens */
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 70px; /* Adjust based on navbar height */
+    left: 0;
+    background-color: var(--white);
+    box-shadow: var(--shadow-light);
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  .navbar-links.open {
+    display: flex; /* Show when 'open' class is active */
+  }
+
+  .navbar-links li {
+    margin: 15px 0;
+  }
+
+  .hamburger {
+    display: block; /* Show hamburger icon on small screens */
+  }
+}

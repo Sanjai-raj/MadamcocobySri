@@ -1,0 +1,107 @@
+/* components/HeroSection.css */
+.hero-section {
+  position: relative;
+  height: 510px; /* Set height to match desired image height */
+  width: 100%; /* Ensure it spans the full width */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  text-align: center;
+  overflow: hidden; /* Crucial to prevent content overflow if image is larger */
+  background-color: var(--bg-color-dark); /* Fallback */
+}
+
+.hero-section .hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* The background URL will be set in your HTML or component */
+  /* background: url('./public/Herosection.png') no-repeat center center/cover; */
+  z-index: 1;
+  filter: brightness(0.7); /* Darken image for text readability */
+}
+
+.hero-section .hero-img img {
+  width: 100%; /* Make image fill the width of its container */
+  height: 100%; /* Make image fill the height of its container */
+  object-fit: cover; /* This will ensure the image covers the area without distortion */
+  object-position: center; /* Center the image within its bounds */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+  /* Removed max-width if you want the content container itself to stretch,
+     but individual text elements will still wrap */
+  /* If you still want text to be constrained, you might re-add max-width or set it on inner elements */
+  max-width: 1000px; /* Example: allowing content to be wider but still readable */
+  width: 100%; /* Ensure content block itself uses available width */
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+  color:rgba(255, 255, 255, 0.9);
+}
+
+.hero-content h2 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: rgba(255, 255, 255, 0.9);
+  
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Adjust CTA button color for hero section */
+.hero-content .cta-button {
+  background-color: var(--white);
+  color: var(--primary-color);
+  padding: 15px 35px;
+  font-size: 1.1rem;
+}
+
+.hero-content .cta-button:hover {
+  background-color: var(--bg-color-light);
+  color: var(--secondary-color);
+}
+
+/* Responsive adjustments for text and possibly a slightly different height on smaller screens */
+@media (max-width: 768px) {
+  .hero-section {
+    height: 300px; /* Slightly reduce height on tablets */
+  }
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  .hero-content h2 {
+    font-size: 1.5rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    height: 250px; /* Further reduce height on mobile */
+  }
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  .hero-content h2 {
+    font-size: 1.2rem;
+  }
+  .hero-content .cta-button {
+    padding: 10px 25px;
+    font-size: 1rem;
+  }
+}

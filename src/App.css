@@ -1,38 +1,84 @@
-.App {
-  text-align: center;
+/* App.css - Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap');
+
+:root {
+  --primary-color: #A0522D; /* Madam Cocoa Brown */
+  --secondary-color: #D2B48C; /* Tan/Warm Beige */
+  --accent-color: #6B8E23; /* Olive Green - for "healthy" feel */
+  --text-dark: #333;
+  --text-light: #f4f4f4;
+  --background-light: #fdfaf7;
+  --background-dark: #2c2c2c;
+  --border-color: #e0e0e0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-light);
+  color: var(--text-dark);
+  line-height: 1.6;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  color: var(--primary-color);
+  margin-top: 1em;
+  margin-bottom: 0.5em;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h1 { font-size: 3em; }
+h2 { font-size: 2.5em; }
+h3 { font-size: 1.8em; }
+
+p {
+  font-size: 1.1em;
+  margin-bottom: 1em;
 }
 
-.App-link {
-  color: #61dafb;
+a {
+  color: var(--primary-color);
+  text-decoration: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+a:hover {
+  text-decoration: underline;
+}
+
+section {
+  padding: 80px 5%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* Call to action button styling */
+.cta-button {
+  background-color: var(--accent-color);
+  color: var(--text-light);
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cta-button:hover {
+  background-color: darken(var(--accent-color), 10%); /* This won't work in plain CSS, but gives intent */
+  opacity: 0.9;
+}
+
+/* Basic responsiveness */
+@media (max-width: 768px) {
+  h1 { font-size: 2.2em; }
+  h2 { font-size: 1.8em; }
+  h3 { font-size: 1.5em; }
+  p { font-size: 1em; }
+  section { padding: 50px 3%; }
 }

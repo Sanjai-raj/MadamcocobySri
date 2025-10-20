@@ -1,6 +1,12 @@
 // components/MenuSection.js
 import React, { useState } from 'react';
 import './MenuSection.css';
+import menu0 from './public/MenuSection.png'
+import natty from './public/WholeNatty.jpg'
+import Whole from './public/WholeW.png'
+import menu1 from './public/menu1.png'
+import menu2 from './public/ChocoB.jpg'
+import menu3 from './public/nattyb.webp'
 
 const MenuSection = () => {
   const [filter, setFilter] = useState('all'); // 'all', 'brownies', 'cookies'
@@ -11,7 +17,7 @@ const MenuSection = () => {
       category: 'brownies',
       name: 'Ragi Choco Brownie',
       description: 'Fudgy, high-fiber, made with Finger Millet (Ragi is rich in Calcium and Iron).',
-      image: '/path/to/ragi-brownie.jpg',
+      image: menu0,
       weight: '1/2 KG'
     },
     {
@@ -19,7 +25,7 @@ const MenuSection = () => {
       category: 'brownies',
       name: 'Karuppu Kavuni Brownie',
       description: 'Our nutrient-dense specialty, made with Black Rice flour, known for its high antioxidants (Anthocyanins).',
-      image: '/path/to/karuppu-kavuni-brownie.jpg',
+      image: menu1,
       weight: '1/2 KG'
     },
     {
@@ -27,7 +33,7 @@ const MenuSection = () => {
       category: 'brownies',
       name: 'Whole Wheat Choco Brownie',
       description: 'Classic chocolate indulgence, made healthier with whole wheat.',
-      image: '/path/to/whole-wheat-brownie.jpg',
+      image: menu2,
       weight: '1/2 KG'
     },
     {
@@ -35,7 +41,7 @@ const MenuSection = () => {
         category: 'brownies',
         name: 'Nutty Choco Brownie',
         description: 'Rich chocolate brownie with a delightful crunch, Ragi base.',
-        image: '/path/to/nutty-brownie.jpg',
+        image: menu3,
         weight: '1/2 KG'
     },
     {
@@ -43,14 +49,14 @@ const MenuSection = () => {
       category: 'cookies',
       name: 'Whole Wheat Choco Chip Monster Cookie',
       description: 'A giant cookie packed with wholesome choco chips, made with whole wheat.',
-      image: '/path/to/choco-chip-cookie.jpg',
+      image: Whole,
     },
     {
       id: 6,
       category: 'cookies',
       name: 'Whole Wheat Nutty Cookies',
       description: 'Crunchy and wholesome cookies, loaded with nuts and baked with whole wheat.',
-      image: '/path/to/nutty-cookie.jpg',
+      image: natty,
     },
   ];
 

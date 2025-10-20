@@ -1,6 +1,7 @@
 // components/AboutSection.js
 import React from 'react';
 import './AboutSection.css';
+import about from './public/about.png'
 
 const AboutSection = () => {
   return (
@@ -19,7 +20,7 @@ const AboutSection = () => {
         </div>
         <div className="about-image">
           {/* Placeholder for an image of Shrisha or the kitchen */}
-          <img src="/path/to/baker-image.jpg" alt="Madam Cocoa baking" />
+          <img src={about} alt="Madam Cocoa baking" />
         </div>
       </div>
     </section>

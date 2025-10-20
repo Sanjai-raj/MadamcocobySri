@@ -1,0 +1,93 @@
+/* App.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap');
+
+:root {
+  --primary-color: #8B4513; /* SaddleBrown - a warm cocoa tone */
+  --secondary-color: #A0522D; /* Sienna */
+  --text-color: #333;
+  --light-text-color: #555;
+  --bg-color-light: #F8F4E3; /* Creamy background */
+  --bg-color-dark: #3A2F2B; /* Darker brown for contrast */
+  --white: #FFFFFF;
+  --shadow-light: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --border-radius: 8px;
+}
+
+/* Basic Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--bg-color-light);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  color: var(--primary-color);
+  margin-bottom: 0.8em;
+  line-height: 1.2;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary-color);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Removes extra space below images */
+}
+
+/* Utility Classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.cta-button {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 12px 25px;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+/* Section Spacing */
+section {
+  padding: 80px 0;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 60px 0;
+  }
+}
