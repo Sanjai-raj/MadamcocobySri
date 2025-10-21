@@ -1,18 +1,15 @@
 // components/ContactSection.js
-//import React, { useState } from 'react';
+
 import './ContactSection.css';
-import { FaWhatsapp, FaInstagram} from 'react-icons/fa';
+import { FaWhatsapp, FaInstagram } from 'react-icons/fa';
+import { HiOutlineMail } from 'react-icons/hi'; // ✅ Clean outlined mail icon
 
 const ContactSection = () => {
   const phoneNumber = "+91 86673 53744"; 
   const emailAddress = "madamecocoa@gmail.com"; 
   const instagramLink = "https://www.instagram.com/madam_cocoa_?igsh=MXF4dnZ0dnloYmc0dQ=="; 
-  //const facebookLink = "https://www.facebook.com/madamecocoa"; 
   const whatsappLink = `https://wa.me/${phoneNumber.replace(/\D/g, '')}`; 
-
-  // Local form state
-  
-  
+  const gmailLink = `mailto:${emailAddress}`;
 
   return (
     <section id="contact" className="contact-section">
@@ -24,14 +21,16 @@ const ContactSection = () => {
       <div className="contact-details">
         <div className="contact-item">
           <h3>Primary Contact (Ordering)</h3>
+
           <p>
             <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
               <FaWhatsapp size={20} className="icon" /> WhatsApp/Phone: {phoneNumber}
             </a>
           </p>
+
           <p>
-            <a href={`mailto:${emailAddress}`}>
-              📧 Email: {emailAddress}
+            <a href={gmailLink} target="_blank" rel="noopener noreferrer">
+              <HiOutlineMail size={22} className="icon" /> Email: {emailAddress}
             </a>
           </p>
         </div>
@@ -56,15 +55,14 @@ const ContactSection = () => {
           <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
             <FaWhatsapp size={30} className="social-icon" />
           </a>
-          <a href={instagramLink}  rel="noopener noreferrer">
+          <a href={instagramLink} target="_blank" rel="noopener noreferrer">
             <FaInstagram size={30} className="social-icon" />
           </a>
-          
+          <a href={gmailLink} target="_blank" rel="noopener noreferrer">
+            <HiOutlineMail size={30} className="social-icon" /> {/* ✅ Matching outline icon */}
+          </a>
         </div>
       </div>
-
-      {/* Contact Form */}
-      
     </section>
   );
 };
