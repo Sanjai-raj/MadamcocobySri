@@ -6,7 +6,7 @@ import { HiOutlineMail } from 'react-icons/hi'; // ✅ Clean outlined mail icon
 
 const ContactSection = () => {
   const phoneNumber = "+91 86673 53744"; 
-  const emailAddress = "madamecocoa@gmail.com"; 
+  const emailAddress = "madamcocoa41@gmail.com"; 
   const instagramLink = "https://www.instagram.com/madam_cocoa_?igsh=MXF4dnZ0dnloYmc0dQ=="; 
   const whatsappLink = `https://wa.me/${phoneNumber.replace(/\D/g, '')}`; 
   const gmailLink = `mailto:${emailAddress}`;
