@@ -6,7 +6,7 @@ import MenuSection from './components/MenuSection';
 import AboutSection from './components/AboutSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
-import './App.css'; // Global styles
+
 
 function App() {
   return (

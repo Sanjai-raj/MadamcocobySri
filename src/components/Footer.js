@@ -1,19 +1,19 @@
 // components/Footer.js
 import React from 'react';
-import './Footer.css';
 
 const Footer = () => {
   return (
-    <footer className="footer">
-      <div className="footer-content">
-        <p>&copy; {new Date().getFullYear()} Madam Cocoa by Shrisha. All rights reserved.</p>
-        <p>Serving the Pollachi community with healthy, delicious treats.</p>
-        {/* Optional: Quick links */}
-        {/* <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#menu">Menu</a></li>
-          <li><a href="#about">About</a></li>
-        </ul> */}
+    <footer className="bg-background-dark text-text-light py-8">
+      <div className="container mx-auto px-4 text-center">
+        <p className="font-serif text-lg mb-2">&copy; {new Date().getFullYear()} Madam Cocoa by Shrisha. All rights reserved.</p>
+        <p className="font-sans text-sm text-text-light/70">Serving the Pollachi community with healthy, delicious treats.</p>
+
+        <div className="mt-6 flex justify-center space-x-6">
+          <a href="#home" className="hover:text-primary transition-colors duration-300">Home</a>
+          <a href="#menu" className="hover:text-primary transition-colors duration-300">Menu</a>
+          <a href="#about" className="hover:text-primary transition-colors duration-300">About</a>
+          <a href="#contact" className="hover:text-primary transition-colors duration-300">Contact</a>
+        </div>
       </div>
     </footer>
   );

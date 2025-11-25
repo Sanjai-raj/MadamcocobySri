@@ -1,6 +1,5 @@
 // components/MenuSection.js
 import React, { useState } from 'react';
-import './MenuSection.css';
 import menu0 from './public/MenuSection.png'
 import natty from './public/WholeNatty.jpg'
 import Whole from './public/WholeW.png'
@@ -37,12 +36,12 @@ const MenuSection = () => {
       weight: '1/2 KG'
     },
     {
-        id: 4,
-        category: 'brownies',
-        name: 'Nutty Choco Brownie',
-        description: 'Rich chocolate brownie with a delightful crunch, Ragi base.',
-        image: menu3,
-        weight: '1/2 KG'
+      id: 4,
+      category: 'brownies',
+      name: 'Nutty Choco Brownie',
+      description: 'Rich chocolate brownie with a delightful crunch, Ragi base.',
+      image: menu3,
+      weight: '1/2 KG'
     },
     {
       id: 5,
@@ -65,22 +64,49 @@ const MenuSection = () => {
   );
 
   return (
-    <section id="menu" className="menu-section">
-      <h2>Our Delicious Menu</h2>
-      <div className="filter-buttons">
-        <button className={filter === 'all' ? 'active' : ''} onClick={() => setFilter('all')}>All</button>
-        <button className={filter === 'brownies' ? 'active' : ''} onClick={() => setFilter('brownies')}>Brownies</button>
-        <button className={filter === 'cookies' ? 'active' : ''} onClick={() => setFilter('cookies')}>Cookies</button>
-      </div>
-      <div className="product-grid">
-        {filteredProducts.map(product => (
-          <div key={product.id} className="product-card">
-            <img src={product.image || '/path/to/placeholder.jpg'} alt={product.name} />
-            <h3>{product.name}</h3>
-            {product.weight && <p className="product-weight">{product.weight}</p>}
-            <p className="product-description">{product.description}</p>
-          </div>
-        ))}
+    <section id="menu" className="py-20 bg-background-light">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-4">Our Delicious Menu</h2>
+          <div className="w-24 h-1 bg-accent mx-auto rounded-full"></div>
+        </div>
+
+        <div className="flex justify-center gap-4 mb-12 flex-wrap">
+          {['all', 'brownies', 'cookies'].map((category) => (
+            <button
+              key={category}
+              className={`px-6 py-2 rounded-full font-sans font-semibold transition-all duration-300 capitalize ${filter === category
+                  ? 'bg-primary text-white shadow-lg transform scale-105'
+                  : 'bg-white text-primary border border-primary hover:bg-primary/10'
+                }`}
+              onClick={() => setFilter(category)}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredProducts.map(product => (
+            <div key={product.id} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
+              <div className="relative h-64 overflow-hidden">
+                <img
+                  src={product.image || '/path/to/placeholder.jpg'}
+                  alt={product.name}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-300"></div>
+              </div>
+              <div className="p-6">
+                <div className="flex justify-between items-start mb-2">
+                  <h3 className="text-xl font-serif font-bold text-text-dark group-hover:text-primary transition-colors duration-300">{product.name}</h3>
+                  {product.weight && <span className="text-sm font-sans font-medium text-accent bg-accent/10 px-2 py-1 rounded-md whitespace-nowrap">{product.weight}</span>}
+                </div>
+                <p className="text-text-dark/70 font-sans leading-relaxed">{product.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
